@@ -60,18 +60,6 @@ const animateAboutItems = (entries, observer) => {
   });
 };
 
-// Анимация изображения в блоке .draw при появлении в области видимости
-const animateDrawImage = (entries, observer) => {
-  const drawImage = document.querySelector(".image__info");
-
-  entries.forEach((entry) => {
-    if (entry.isIntersecting && drawImage) {
-      drawImage.classList.add("visible");
-      observer.disconnect();
-    }
-  });
-};
-
 document.addEventListener("DOMContentLoaded", function () {
   // Запуск анимаций при загрузке
   animateOnLoad();
@@ -87,15 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
       threshold: 0.3,
     });
     observerAbout.observe(aboutItems);
-  }
-
-  // Наблюдатель за блоком drawImage
-  const drawImage = document.querySelector(".image__info");
-  if (drawImage) {
-    const observerDraw = new IntersectionObserver(animateDrawImage, {
-      threshold: 0.5,
-    });
-    observerDraw.observe(drawImage);
   }
 
   // Прокрутка к секции "get" по нажатию на learnMoreButton

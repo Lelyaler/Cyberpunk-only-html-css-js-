@@ -1,7 +1,9 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Archangelsk";
-  src: url("../fonts/Archangelsk.woff2") format("woff2"), url("../fonts/Archangelsk.woff") format("woff"), url("../fonts/Archangelsk.ttf") format("truetype");
+  src: url("../fonts/Archangelsk.woff2") format("woff2"),
+    url("../fonts/Archangelsk.woff") format("woff"),
+    url("../fonts/Archangelsk.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -439,16 +441,6 @@ img {
 
 .checkbox__input:checked + .checkbox__text::before {
   background-image: url(../img/draw/Check.svg);
-}
-
-.image__info {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-}
-.image__info.visible {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .display {
