@@ -443,6 +443,16 @@ img {
   background-image: url(../img/draw/Check.svg);
 }
 
+.image__info {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.image__info.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .display {
   padding-top: 70px;
   padding-bottom: 70px;
