@@ -11,42 +11,88 @@
       name="keywords"
       content="Cyberpunk 2077, игра, ролевые игры, Найт-Сити, киберпанк"
     />
-    <meta name="author" content="Ваше имя или название компании" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="author" content="CD PROJEKT RED" />
+    <link rel="icon" href="img/header/Cyberpunk_2077_logo1.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,regular,500,700"
-      rel="stylesheet"
+      rel="preload"
+      href="fonts/Archangelsk.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      rel="preload"
+      href="img/header/new_banner1-mobile.webp"
+      as="image"
+      type="image/webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
     />
-    <title>Cyberpunk</title>
+    <link
+      rel="preload"
+      href="img/header/new_banner1.webp"
+      as="image"
+      type="image/webp"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
+    <link rel="preload" href="css/style.min.css" as="style" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      rel="preload"
+      href="css/swiper-bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    </noscript>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      />
+    </noscript>
+    <title>Cyberpunk 2077</title>
   </head>
   <body>
     <header class="header">
       <div class="header__container container">
-        <a href="#" class="header__logo">
-          <img src="img/header/Cyberpunk_2077_logo1.svg" alt="logo" />
+        <a href="#" class="header__logo" aria-label="Главная">
+          <img
+            src="img/header/Cyberpunk_2077_logo1.svg"
+            alt="Cyberpunk 2077"
+            width="296"
+            height="74"
+            fetchpriority="high"
+          />
         </a>
-        <nav class="header__social">
-          <a class="header__social_icon" href="#">
-            <img src="img/header/youtube_logo.svg" alt="youtube logo" />
+        <nav class="header__social" aria-label="Социальные сети">
+          <a class="header__social_icon" href="#" aria-label="YouTube">
+            <img src="img/header/youtube_logo.svg" alt="YouTube" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#">
-            <img src="img/header/vk_logo.svg" alt="vk logo" />
+          <a class="header__social_icon" href="#" aria-label="ВКонтакте">
+            <img src="img/header/vk_logo.svg" alt="ВКонтакте" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#">
-            <img src="img/header/facebook-rect_logo.svg" alt="facebook" />
+          <a class="header__social_icon" href="#" aria-label="Facebook">
+            <img src="img/header/facebook-rect_logo.svg" alt="Facebook" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#">
-            <img src="img/header/twitter-square_logo.svg" alt="twitter" />
+          <a class="header__social_icon" href="#" aria-label="Twitter">
+            <img src="img/header/twitter-square_logo.svg" alt="Twitter" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#">
-            <img src="img/header/twitch_logo.svg" alt="twitch" />
+          <a class="header__social_icon" href="#" aria-label="Twitch">
+            <img src="img/header/twitch_logo.svg" alt="Twitch" width="29" height="30" />
           </a>
-          <a class="header__social_icon" href="#">
-            <img src="img/header/instagram-square_logo.svg" alt="instagram" />
+          <a class="header__social_icon" href="#" aria-label="Instagram">
+            <img src="img/header/instagram-square_logo.svg" alt="Instagram" width="30" height="30" />
           </a>
         </nav>
       </div>
@@ -56,20 +102,86 @@
         <div class="intro-block__img swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="img/header/new_banner1.jpg" alt="header1" />
+              <picture>
+                <source
+                  srcset="img/header/new_banner1-mobile.webp"
+                  media="(max-width: 768px)"
+                  type="image/webp"
+                  width="768"
+                  height="400"
+                />
+                <source
+                  srcset="img/header/new_banner1.webp"
+                  type="image/webp"
+                  width="1920"
+                  height="1000"
+                />
+                <img
+                  src="img/header/new_banner1.webp"
+                  alt="Cyberpunk 2077"
+                  width="1920"
+                  height="1000"
+                  fetchpriority="high"
+                  loading="eager"
+                />
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img src="img/header/new_banner2.jpg" alt="header2" />
+              <picture>
+                <source
+                  srcset="img/header/new_banner2-mobile.webp"
+                  media="(max-width: 768px)"
+                  type="image/webp"
+                  width="768"
+                  height="431"
+                />
+                <source
+                  srcset="img/header/new_banner2.webp"
+                  type="image/webp"
+                  width="1280"
+                  height="719"
+                />
+                <img
+                  src="img/header/new_banner2.jpg"
+                  alt="Cyberpunk 2077"
+                  width="1280"
+                  height="719"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img src="img/header/new_banner3.jpg" alt="header3" />
+              <picture>
+                <source
+                  srcset="img/header/new_banner3-mobile.webp"
+                  media="(max-width: 768px)"
+                  type="image/webp"
+                  width="768"
+                  height="432"
+                />
+                <source
+                  srcset="img/header/new_banner3.webp"
+                  type="image/webp"
+                  width="1920"
+                  height="1080"
+                />
+                <img
+                  src="img/header/new_banner3.jpg"
+                  alt="Cyberpunk 2077"
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
         </div>
         <div class="intro__container container">
           <div class="intro-content cut-box">
             <h1 class="intro-content__title">Доступно на всех платформах</h1>
-            <button class="intro-content__button btn" id="learnMoreButton">
+            <button class="intro-content__button btn" id="learnMoreButton" type="button">
               Узнать больше
             </button>
           </div>
@@ -90,25 +202,61 @@
           <div class="about-items">
             <div class="about-item__box">
               <div class="item__box cut-box">
-                <img src="img/about/Rectangle_597.jpg" alt="night about" />
+                <picture>
+                  <source srcset="img/about/Rectangle_597.webp" type="image/webp" />
+                  <img
+                    src="img/about/Rectangle_597.jpg"
+                    alt="Улицы Найт-Сити"
+                    width="460"
+                    height="196"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="item__box cut-box">
-                <img src="img/about/Rectangle_598.jpg" alt="nighty about" />
+                <picture>
+                  <source srcset="img/about/Rectangle_598.webp" type="image/webp" />
+                  <img
+                    src="img/about/Rectangle_598.jpg"
+                    alt="Персонажи Найт-Сити"
+                    width="460"
+                    height="196"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             </div>
             <picture class="about-item cut-box">
               <source
-                srcset="img/about/mini/Rectangle_606.jpg"
-                media="(max-width: 320px)"
+                srcset="img/about/mini/602-mobile.webp"
+                media="(max-width: 550px)"
+                type="image/webp"
+                width="480"
+                height="213"
               />
               <source
-                srcset="img/about/mini/602.jpg"
+                srcset="img/about/mini/602.webp"
                 media="(max-width: 1024px)"
+                type="image/webp"
+                width="952"
+                height="424"
+              />
+              <source
+                srcset="img/about/599.webp"
+                type="image/webp"
+                width="788"
+                height="424"
               />
               <img
                 class="about-item__img"
                 src="img/about/599.jpg"
-                alt="night about"
+                alt="Панорама Найт-Сити"
+                width="788"
+                height="424"
+                loading="lazy"
+                decoding="async"
               />
             </picture>
           </div>
@@ -116,7 +264,16 @@
       </section>
       <section class="draw">
         <div class="draw__container container">
-          <img class="draw__star" src="img/draw/star.svg" alt="star" />
+          <img
+            class="draw__star"
+            src="img/draw/star.svg"
+            alt=""
+            aria-hidden="true"
+            width="132"
+            height="132"
+            loading="lazy"
+            decoding="async"
+          />
           <h2 class="draw__title">Играй и выигрывай!</h2>
           <p class="draw__text">
             Играй в <span class="color__word">Cyberpunk 2077</span> и получи
@@ -133,30 +290,67 @@
                 type="text"
                 name="name"
                 placeholder="Как тебя зовут?"
+                aria-label="Имя"
+                required
               />
               <input
                 class="form__input"
                 type="email"
                 name="email"
                 placeholder="Твой e-mail"
+                aria-label="Электронная почта"
+                required
               />
-              <label class="form-label">
-                <input class="form-label__file" type="file" />
+              <label class="form-label" for="file-upload">
+                <input
+                  class="form-label__file"
+                  id="file-upload"
+                  type="file"
+                  aria-label="Прикрепить скриншот"
+                />
                 <span class="form-label__info">Прикрепить скриншот</span>
                 <span class="form-label__size">.png / .jpg / .pdf</span>
               </label>
-              <button class="form__button btn">Отправить</button>
+              <button class="form__button btn" type="submit">Отправить</button>
               <label class="form__footer checkbox">
-                <input class="checkbox__input" type="checkbox" />
+                <input
+                  class="checkbox__input"
+                  type="checkbox"
+                  aria-label="Согласие на обработку персональных данных"
+                />
                 <span class="checkbox__text"
                   >Согласен на обработку персональных данных</span
                 >
               </label>
             </form>
-            <picture>
-              <source srcset="img/draw/33.png" media="(max-width: 768px)" />
-              <source srcset="img/draw/244.png" media="(max-width: 1024px)" />
-              <img class="image__info" src="img/draw/217.png" alt="draw" />
+            <picture class="draw__picture">
+              <source
+                srcset="img/draw/33.webp"
+                media="(max-width: 768px)"
+                type="image/webp"
+                width="296"
+                height="131"
+              />
+              <source
+                srcset="img/draw/244.webp"
+                media="(max-width: 1024px)"
+                type="image/webp"
+                width="460"
+                height="858"
+              />
+              <source
+                srcset="img/draw/217.webp"
+                type="image/webp"
+                width="788"
+                height="456"
+              />
+              <img
+                class="image__info"
+                src="img/draw/217.png"
+                alt="Призы розыгрыша"
+                loading="lazy"
+                decoding="async"
+              />
             </picture>
           </div>
         </div>
@@ -164,20 +358,48 @@
       <section class="display">
         <div class="display__container container">
           <div class="display-hp">
-            <img
-              class="display-hp__image"
-              src="img/hp/c06611743_1.png"
-              alt="hp"
-            />
+            <picture>
+              <source srcset="img/hp/c06611743_1.webp" type="image/webp" />
+              <img
+                class="display-hp__image"
+                src="img/hp/c06611743_1.png"
+                alt="Монитор HP Cyberpunk"
+                width="624"
+                height="430"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <div class="display-hp__logos">
-              <a class="hp__logo" href="#">
-                <img src="img/hp/hp-2_logo.svg" alt="logo hp" />
+              <a class="hp__logo" href="#" aria-label="HP">
+                <img
+                  src="img/hp/hp-2_logo.svg"
+                  alt="HP"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
-              <a class="hp__logo" href="#">
-                <img src="img/hp/Group_235.svg" alt="logo hp" />
+              <a class="hp__logo" href="#" aria-label="Cyberpunk">
+                <img
+                  src="img/hp/Group_235.svg"
+                  alt="Cyberpunk"
+                  width="92"
+                  height="21"
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
-              <a class="hp__logo" href="#">
-                <img src="img/hp/yellow.svg" alt="logo hp" />
+              <a class="hp__logo" href="#" aria-label="Cyberpunk 2077">
+                <img
+                  src="img/hp/yellow.svg"
+                  alt="Cyberpunk 2077"
+                  width="320"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
             </div>
           </div>
@@ -192,7 +414,15 @@
             <div class="display__hp">
               <div class="display__item item-hp">
                 <div class="item-hp__icon">
-                  <img src="img/hp/color_lens.svg" alt="color_lens" />
+                  <img
+                    src="img/hp/color_lens.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="item-hp__text">
                   <p class="item-hp__info">Яркие насыщенные цвета</p>
@@ -202,7 +432,15 @@
             <div class="display__hp">
               <div class="display__item item-hp">
                 <div class="item-hp__icon">
-                  <img src="img/hp/auto_awesome.svg" alt="auto_awesome" />
+                  <img
+                    src="img/hp/auto_awesome.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="item-hp__text">
                   <p class="item-hp__info">Кристальная четкость изображения</p>
@@ -214,7 +452,12 @@
                 <div class="item-hp__icon">
                   <img
                     src="img/hp/auto_awesome_motion.svg"
-                    alt="auto_awesome_motion"
+                    alt=""
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="item-hp__text">
@@ -224,16 +467,32 @@
                 </div>
               </div>
             </div>
-            <button class="display__button btn">Подробнее</button>
+            <button class="display__button btn" type="button">Подробнее</button>
           </div>
         </div>
       </section>
       <section class="get" id="get">
-        <picture>
+        <picture class="get-content__image">
+          <source
+            srcset="img/about/cyberpunk_2077_world-mobile.webp"
+            media="(max-width: 768px)"
+            type="image/webp"
+            width="600"
+            height="600"
+          />
+          <source
+            srcset="img/about/cyberpunk_2077_world.webp"
+            type="image/webp"
+            width="1000"
+            height="1000"
+          />
           <img
-            class="get-content__image"
             src="img/about/cyberpunk_2077_world.jpg"
-            alt="Cyberpunk"
+            alt="Cyberpunk 2077"
+            width="1000"
+            height="1000"
+            loading="lazy"
+            decoding="async"
           />
         </picture>
         <div class="get__containar container">
@@ -243,7 +502,15 @@
             <div class="get__items">
               <div class="get__item item-get">
                 <div class="item-get__icon">
-                  <img src="img/get/disk.svg" alt="disk" />
+                  <img
+                    src="img/get/disk.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="item-get__text">
                   <p class="item-get__title">Футляр с игровыми дисками</p>
@@ -253,7 +520,15 @@
             <div class="get__items">
               <div class="get__item item-get">
                 <div class="item-get__icon">
-                  <img src="img/get/wysiwyg.svg" alt="wysiwyg" />
+                  <img
+                    src="img/get/wysiwyg.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="item-get__text">
                   <p class="item-get__title">
@@ -265,7 +540,15 @@
             <div class="get__items">
               <div class="get__item item-get">
                 <div class="item-get__icon">
-                  <img src="img/get/collections.svg" alt="collections" />
+                  <img
+                    src="img/get/collections.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="item-get__text">
                   <p class="item-get__title">
@@ -277,20 +560,48 @@
             <p class="get__subtitle">Выберите платформу:</p>
             <ul class="get-platform">
               <li class="get-platform__list">
-                <a href="#"><img src="img/get/Frame_13.svg" alt="pc" /></a>
-              </li>
-              <li class="get-platform__list">
-                <a href="#"
-                  ><img src="img/get/xbox-one-3_logo.svg" alt="xbox"
+                <a href="#" aria-label="PC"
+                  ><img
+                    src="img/get/Frame_13.svg"
+                    alt="PC"
+                    width="62"
+                    height="36"
+                    loading="lazy"
+                    decoding="async"
                 /></a>
               </li>
               <li class="get-platform__list">
-                <a href="#"
-                  ><img src="img/get/stadia_logo.svg" alt="stadia"
+                <a href="#" aria-label="Xbox One"
+                  ><img
+                    src="img/get/xbox-one-3_logo.svg"
+                    alt="Xbox One"
+                    width="178"
+                    height="36"
+                    loading="lazy"
+                    decoding="async"
                 /></a>
               </li>
               <li class="get-platform__list">
-                <a href="#"><img src="img/get/Group.svg" alt="ps4" /></a>
+                <a href="#" aria-label="Google Stadia"
+                  ><img
+                    src="img/get/stadia_logo.svg"
+                    alt="Stadia"
+                    width="58"
+                    height="51"
+                    loading="lazy"
+                    decoding="async"
+                /></a>
+              </li>
+              <li class="get-platform__list">
+                <a href="#" aria-label="PlayStation 4"
+                  ><img
+                    src="img/get/Group.svg"
+                    alt="PlayStation 4"
+                    width="168"
+                    height="36"
+                    loading="lazy"
+                    decoding="async"
+                /></a>
               </li>
             </ul>
           </div>
@@ -299,11 +610,25 @@
       <footer class="footer">
         <div class="footer-block">
           <div class="footer-block__logo">
-            <a href="#" class="block__logo">
-              <img src="img/footer/Cyberpunk_2077_logo_2.svg" alt="Cyberpunk" />
+            <a href="#" class="block__logo" aria-label="Cyberpunk 2077">
+              <img
+                src="img/footer/Cyberpunk_2077_logo_2.svg"
+                alt="Cyberpunk 2077"
+                width="296"
+                height="74"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
-            <a href="#" class="block__logo">
-              <img src="img/footer/CD_Projekt_logo_1.svg" alt="Projekt_logo" />
+            <a href="#" class="block__logo" aria-label="CD PROJEKT RED">
+              <img
+                src="img/footer/CD_Projekt_logo_1.svg"
+                alt="CD PROJEKT RED"
+                width="173"
+                height="74"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
           </div>
           <div class="footer-block__info">
@@ -318,7 +643,7 @@
         </div>
       </footer>
     </main>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <script src="js/swiper-bundle.min.js" defer></script>
+    <script src="js/app.min.js" defer></script>
   </body>
 </html>
