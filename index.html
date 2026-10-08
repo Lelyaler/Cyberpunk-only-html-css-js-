@@ -38,7 +38,6 @@
       media="(min-width: 769px)"
       fetchpriority="high"
     />
-    <link rel="preload" href="css/style.min.css" as="style" />
     <link rel="stylesheet" href="css/style.min.css" />
     <link
       rel="preload"
@@ -66,7 +65,7 @@
   <body>
     <header class="header">
       <div class="header__container container">
-        <a href="#" class="header__logo" aria-label="Главная">
+        <a href="#" class="header__logo" aria-label="Cyberpunk 2077 — На главную">
           <img
             src="img/header/Cyberpunk_2077_logo1.svg"
             alt="Cyberpunk 2077"
@@ -76,22 +75,22 @@
           />
         </a>
         <nav class="header__social" aria-label="Социальные сети">
-          <a class="header__social_icon" href="#" aria-label="YouTube">
+          <a class="header__social_icon" href="https://youtube.com/CyberpunkGame" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
             <img src="img/header/youtube_logo.svg" alt="YouTube" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#" aria-label="ВКонтакте">
+          <a class="header__social_icon" href="https://vk.com/cyberpunkgame" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
             <img src="img/header/vk_logo.svg" alt="ВКонтакте" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#" aria-label="Facebook">
+          <a class="header__social_icon" href="https://facebook.com/CyberpunkGame" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <img src="img/header/facebook-rect_logo.svg" alt="Facebook" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#" aria-label="Twitter">
+          <a class="header__social_icon" href="https://twitter.com/CyberpunkGame" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
             <img src="img/header/twitter-square_logo.svg" alt="Twitter" width="30" height="30" />
           </a>
-          <a class="header__social_icon" href="#" aria-label="Twitch">
+          <a class="header__social_icon" href="https://twitch.tv/cdprojektred" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
             <img src="img/header/twitch_logo.svg" alt="Twitch" width="29" height="30" />
           </a>
-          <a class="header__social_icon" href="#" aria-label="Instagram">
+          <a class="header__social_icon" href="https://instagram.com/cyberpunkgame" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <img src="img/header/instagram-square_logo.svg" alt="Instagram" width="30" height="30" />
           </a>
         </nav>
@@ -142,7 +141,7 @@
                   height="719"
                 />
                 <img
-                  src="img/header/new_banner2.jpg"
+                  src="img/header/new_banner2.webp"
                   alt="Cyberpunk 2077"
                   width="1280"
                   height="719"
@@ -167,7 +166,7 @@
                   height="1080"
                 />
                 <img
-                  src="img/header/new_banner3.jpg"
+                  src="img/header/new_banner3.webp"
                   alt="Cyberpunk 2077"
                   width="1920"
                   height="1080"
@@ -205,7 +204,7 @@
                 <picture>
                   <source srcset="img/about/Rectangle_597.webp" type="image/webp" />
                   <img
-                    src="img/about/Rectangle_597.jpg"
+                    src="img/about/Rectangle_597.webp"
                     alt="Улицы Найт-Сити"
                     width="460"
                     height="196"
@@ -218,7 +217,7 @@
                 <picture>
                   <source srcset="img/about/Rectangle_598.webp" type="image/webp" />
                   <img
-                    src="img/about/Rectangle_598.jpg"
+                    src="img/about/Rectangle_598.webp"
                     alt="Персонажи Найт-Сити"
                     width="460"
                     height="196"
@@ -251,7 +250,7 @@
               />
               <img
                 class="about-item__img"
-                src="img/about/599.jpg"
+                src="img/about/599.webp"
                 alt="Панорама Найт-Сити"
                 width="788"
                 height="424"
@@ -264,17 +263,19 @@
       </section>
       <section class="draw">
         <div class="draw__container container">
-          <img
-            class="draw__star"
-            src="img/draw/star.svg"
-            alt=""
-            aria-hidden="true"
-            width="132"
-            height="132"
-            loading="lazy"
-            decoding="async"
-          />
-          <h2 class="draw__title">Играй и выигрывай!</h2>
+          <div class="draw__header">
+            <img
+              class="draw__star"
+              src="img/draw/star.svg"
+              alt=""
+              aria-hidden="true"
+              width="132"
+              height="132"
+              loading="lazy"
+              decoding="async"
+            />
+            <h2 class="draw__title">Играй и выигрывай!</h2>
+          </div>
           <p class="draw__text">
             Играй в <span class="color__word">Cyberpunk 2077</span> и получи
             возможность выиграть консоль
@@ -284,38 +285,53 @@
             подведены 1 февраля. Удачи! ;)
           </p>
           <div class="draw__info">
-            <form action="#" class="form__info">
-              <input
-                class="form__input"
-                type="text"
-                name="name"
-                placeholder="Как тебя зовут?"
-                aria-label="Имя"
-                required
-              />
-              <input
-                class="form__input"
-                type="email"
-                name="email"
-                placeholder="Твой e-mail"
-                aria-label="Электронная почта"
-                required
-              />
+            <form action="#" class="form__info" id="drawForm" novalidate>
+              <div class="form__group">
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  id="drawName"
+                  placeholder="Как тебя зовут?"
+                  aria-label="Имя"
+                  autocomplete="name"
+                  required
+                />
+                <span class="form__error" id="nameError" aria-live="polite"></span>
+              </div>
+              <div class="form__group">
+                <input
+                  class="form__input"
+                  type="email"
+                  name="email"
+                  id="drawEmail"
+                  placeholder="Твой e-mail"
+                  aria-label="Электронная почта"
+                  autocomplete="email"
+                  required
+                />
+                <span class="form__error" id="emailError" aria-live="polite"></span>
+              </div>
               <label class="form-label" for="file-upload">
                 <input
                   class="form-label__file"
                   id="file-upload"
                   type="file"
+                  name="screenshot"
+                  accept="image/png,image/jpeg,image/webp,application/pdf"
                   aria-label="Прикрепить скриншот"
                 />
-                <span class="form-label__info">Прикрепить скриншот</span>
+                <span class="form-label__info" id="fileUploadText">Прикрепить скриншот</span>
                 <span class="form-label__size">.png / .jpg / .pdf</span>
               </label>
               <button class="form__button btn" type="submit">Отправить</button>
-              <label class="form__footer checkbox">
+              <label class="form__footer checkbox" for="agreementCheckbox">
                 <input
                   class="checkbox__input"
+                  id="agreementCheckbox"
                   type="checkbox"
+                  name="agreement"
+                  required
                   aria-label="Согласие на обработку персональных данных"
                 />
                 <span class="checkbox__text"
@@ -346,7 +362,7 @@
               />
               <img
                 class="image__info"
-                src="img/draw/217.png"
+                src="img/draw/217.webp"
                 alt="Призы розыгрыша"
                 loading="lazy"
                 decoding="async"
@@ -362,7 +378,7 @@
               <source srcset="img/hp/c06611743_1.webp" type="image/webp" />
               <img
                 class="display-hp__image"
-                src="img/hp/c06611743_1.png"
+                src="img/hp/c06611743_1.webp"
                 alt="Монитор HP Cyberpunk"
                 width="624"
                 height="430"
@@ -371,7 +387,7 @@
               />
             </picture>
             <div class="display-hp__logos">
-              <a class="hp__logo" href="#" aria-label="HP">
+              <a class="hp__logo" href="https://www.hp.com" target="_blank" rel="noopener noreferrer" aria-label="HP">
                 <img
                   src="img/hp/hp-2_logo.svg"
                   alt="HP"
@@ -381,16 +397,16 @@
                   decoding="async"
                 />
               </a>
-              <a class="hp__logo" href="#" aria-label="Cyberpunk">
+              <span class="hp__separator" aria-hidden="true">
                 <img
                   src="img/hp/Group_235.svg"
-                  alt="Cyberpunk"
+                  alt=""
                   width="92"
                   height="21"
                   loading="lazy"
                   decoding="async"
                 />
-              </a>
+              </span>
               <a class="hp__logo" href="#" aria-label="Cyberpunk 2077">
                 <img
                   src="img/hp/yellow.svg"
@@ -404,7 +420,7 @@
             </div>
           </div>
           <div class="display-info">
-            <h3 class="display-hp__title">Полное погружение вместе с HP</h3>
+            <h2 class="display-hp__title">Полное погружение вместе с HP</h2>
             <p class="display-hp__text">
               Погрузись в современные экшен-игры с реалистичным изображением с
               помощью монитора с диагональю 23,8 дюйма, созданном для
@@ -467,7 +483,7 @@
                 </div>
               </div>
             </div>
-            <button class="display__button btn" type="button">Подробнее</button>
+            <button class="display__button btn" id="hpDetailsBtn" type="button">Подробнее</button>
           </div>
         </div>
       </section>
@@ -487,7 +503,7 @@
             height="1000"
           />
           <img
-            src="img/about/cyberpunk_2077_world.jpg"
+            src="img/about/cyberpunk_2077_world.webp"
             alt="Cyberpunk 2077"
             width="1000"
             height="1000"
@@ -495,9 +511,9 @@
             decoding="async"
           />
         </picture>
-        <div class="get__containar container">
+        <div class="get__container container">
           <div class="get__block">
-            <h3 class="get__title">Купить игру Cyberpunk 2077</h3>
+            <h2 class="get__title">Купить игру Cyberpunk 2077</h2>
             <p class="get__subtitle">В комплект входит:</p>
             <div class="get__items">
               <div class="get__item item-get">
@@ -558,91 +574,176 @@
               </div>
             </div>
             <p class="get__subtitle">Выберите платформу:</p>
-            <ul class="get-platform">
-              <li class="get-platform__list">
-                <a href="#" aria-label="PC"
-                  ><img
-                    src="img/get/Frame_13.svg"
-                    alt="PC"
-                    width="62"
-                    height="36"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
+            <ul class="get-platform" role="radiogroup" aria-label="Игровые платформы">
+              <li class="get-platform__list is-active" data-platform="PC" role="radio" aria-checked="true" tabindex="0">
+                <img
+                  src="img/get/Frame_13.svg"
+                  alt="PC"
+                  width="62"
+                  height="36"
+                  loading="lazy"
+                  decoding="async"
+                />
               </li>
-              <li class="get-platform__list">
-                <a href="#" aria-label="Xbox One"
-                  ><img
-                    src="img/get/xbox-one-3_logo.svg"
-                    alt="Xbox One"
-                    width="178"
-                    height="36"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
+              <li class="get-platform__list" data-platform="Xbox One" role="radio" aria-checked="false" tabindex="0">
+                <img
+                  src="img/get/xbox-one-3_logo.svg"
+                  alt="Xbox One"
+                  width="178"
+                  height="36"
+                  loading="lazy"
+                  decoding="async"
+                />
               </li>
-              <li class="get-platform__list">
-                <a href="#" aria-label="Google Stadia"
-                  ><img
-                    src="img/get/stadia_logo.svg"
-                    alt="Stadia"
-                    width="58"
-                    height="51"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
+              <li class="get-platform__list" data-platform="Google Stadia" role="radio" aria-checked="false" tabindex="0">
+                <img
+                  src="img/get/stadia_logo.svg"
+                  alt="Stadia"
+                  width="58"
+                  height="51"
+                  loading="lazy"
+                  decoding="async"
+                />
               </li>
-              <li class="get-platform__list">
-                <a href="#" aria-label="PlayStation 4"
-                  ><img
-                    src="img/get/Group.svg"
-                    alt="PlayStation 4"
-                    width="168"
-                    height="36"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
+              <li class="get-platform__list" data-platform="PlayStation 4" role="radio" aria-checked="false" tabindex="0">
+                <img
+                  src="img/get/Group.svg"
+                  alt="PlayStation 4"
+                  width="168"
+                  height="36"
+                  loading="lazy"
+                  decoding="async"
+                />
               </li>
             </ul>
+            <p class="get-platform__selected">Выбрана платформа: <span class="color__word" id="selectedPlatformLabel">PC</span></p>
           </div>
         </div>
       </section>
-      <footer class="footer">
-        <div class="footer-block">
-          <div class="footer-block__logo">
-            <a href="#" class="block__logo" aria-label="Cyberpunk 2077">
-              <img
-                src="img/footer/Cyberpunk_2077_logo_2.svg"
-                alt="Cyberpunk 2077"
-                width="296"
-                height="74"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-            <a href="#" class="block__logo" aria-label="CD PROJEKT RED">
-              <img
-                src="img/footer/CD_Projekt_logo_1.svg"
-                alt="CD PROJEKT RED"
-                width="173"
-                height="74"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </div>
-          <div class="footer-block__info">
-            <a class="block__info" href="#">Лицензия</a>
-            <a class="block__info" href="#">Политика конфиденциальности</a>
-          </div>
-        </div>
-        <div class="footer__copy">
-          <small class="copyright"
-            >CD PROJEKT®, Cyberpunk®, Cyberpunk 2077®</small
-          >
-        </div>
-      </footer>
     </main>
+    <footer class="footer">
+      <div class="footer-block">
+        <div class="footer-block__logo">
+          <a href="#" class="block__logo" aria-label="Cyberpunk 2077">
+            <img
+              src="img/footer/Cyberpunk_2077_logo_2.svg"
+              alt="Cyberpunk 2077"
+              width="296"
+              height="74"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <a
+            href="https://www.cdprojektred.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block__logo"
+            aria-label="CD PROJEKT RED"
+          >
+            <img
+              src="img/footer/CD_Projekt_logo_1.svg"
+              alt="CD PROJEKT RED"
+              width="173"
+              height="74"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </div>
+        <div class="footer-block__info">
+          <button class="block__info btn-link" type="button" id="licenseBtn">Лицензия</button>
+          <button class="block__info btn-link" type="button" id="privacyBtn">Политика конфиденциальности</button>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <small class="copyright"
+          >CD PROJEKT®, Cyberpunk®, Cyberpunk 2077®</small
+        >
+      </div>
+    </footer>
+
+    <!-- Модальное окно характеристик монитора -->
+    <div class="cyber-modal" id="hpModal" role="dialog" aria-modal="true" aria-labelledby="hpModalTitle" hidden>
+      <div class="cyber-modal__overlay" data-modal-close></div>
+      <div class="cyber-modal__dialog cut-box">
+        <div class="cyber-modal__header">
+          <h3 class="cyber-modal__title" id="hpModalTitle">Характеристики HP Pavilion Gaming</h3>
+          <button class="cyber-modal__close" type="button" aria-label="Закрыть" data-modal-close>&times;</button>
+        </div>
+        <div class="cyber-modal__body">
+          <ul class="cyber-modal__specs">
+            <li><span>Диагональ экрана:</span> <strong>23.8 дюйма (60.5 см)</strong></li>
+            <li><span>Тип матрицы:</span> <strong>IPS с широкими углами обзора</strong></li>
+            <li><span>Частота обновления:</span> <strong>144 Гц</strong></li>
+            <li><span>Время отклика:</span> <strong>1 мс</strong></li>
+            <li><span>Цветовой охват:</span> <strong>99% sRGB</strong></li>
+            <li><span>Синхронизация:</span> <strong>AMD FreeSync Premium</strong></li>
+            <li><span>Разъёмы:</span> <strong>HDMI 2.0, DisplayPort 1.2, Audio 3.5mm</strong></li>
+          </ul>
+        </div>
+        <div class="cyber-modal__footer">
+          <button class="btn cyber-modal__btn" type="button" data-modal-close>Понятно</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно подтверждения розыгрыша -->
+    <div class="cyber-modal" id="raffleModal" role="dialog" aria-modal="true" aria-labelledby="raffleModalTitle" hidden>
+      <div class="cyber-modal__overlay" data-modal-close></div>
+      <div class="cyber-modal__dialog cut-box">
+        <div class="cyber-modal__header">
+          <h3 class="cyber-modal__title" id="raffleModalTitle">Заявка принята!</h3>
+          <button class="cyber-modal__close" type="button" aria-label="Закрыть" data-modal-close>&times;</button>
+        </div>
+        <div class="cyber-modal__body">
+          <p class="cyber-modal__text">Твои данные успешно зарегистрированы в базе розыгрыша Найт-Сити.</p>
+          <div class="cyber-modal__badge">
+            <span>НОМЕР УЧАСТНИКА:</span>
+            <code id="raffleTicketCode">CP-2077-XXXXXX</code>
+          </div>
+          <p class="cyber-modal__subtext">Итоги подведём 1 февраля. Следи за оповещениями на почте!</p>
+        </div>
+        <div class="cyber-modal__footer">
+          <button class="btn cyber-modal__btn" type="button" data-modal-close>В игру</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно лицензии -->
+    <div class="cyber-modal" id="licenseModal" role="dialog" aria-modal="true" aria-labelledby="licenseModalTitle" hidden>
+      <div class="cyber-modal__overlay" data-modal-close></div>
+      <div class="cyber-modal__dialog cut-box">
+        <div class="cyber-modal__header">
+          <h3 class="cyber-modal__title" id="licenseModalTitle">Лицензионное соглашение</h3>
+          <button class="cyber-modal__close" type="button" aria-label="Закрыть" data-modal-close>&times;</button>
+        </div>
+        <div class="cyber-modal__body">
+          <p class="cyber-modal__text">Cyberpunk 2077 является зарегистрированным товарным знаком CD PROJEKT S.A. Все права защищены. Все остальные товарные знаки и авторские права являются собственностью соответствующих владельцев.</p>
+        </div>
+        <div class="cyber-modal__footer">
+          <button class="btn cyber-modal__btn" type="button" data-modal-close>Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно политики конфиденциальности -->
+    <div class="cyber-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" hidden>
+      <div class="cyber-modal__overlay" data-modal-close></div>
+      <div class="cyber-modal__dialog cut-box">
+        <div class="cyber-modal__header">
+          <h3 class="cyber-modal__title" id="privacyModalTitle">Политика конфиденциальности</h3>
+          <button class="cyber-modal__close" type="button" aria-label="Закрыть" data-modal-close>&times;</button>
+        </div>
+        <div class="cyber-modal__body">
+          <p class="cyber-modal__text">Персональные данные, предоставленные через форму регистрации розыгрыша, используются исключительно для идентификации участников и связи с победителями. Данные не передаются третьим лицам.</p>
+        </div>
+        <div class="cyber-modal__footer">
+          <button class="btn cyber-modal__btn" type="button" data-modal-close>Принять</button>
+        </div>
+      </div>
+    </div>
+
     <script src="js/swiper-bundle.min.js" defer></script>
     <script src="js/app.min.js" defer></script>
   </body>
