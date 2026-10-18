@@ -12,6 +12,14 @@
       content="Cyberpunk 2077, игра, ролевые игры, Найт-Сити, киберпанк"
     />
     <meta name="author" content="CD PROJEKT RED" />
+    <meta property="og:title" content="Cyberpunk 2077" />
+    <meta
+      property="og:description"
+      content="Погрузитесь в мир Cyberpunk 2077, приключенческой ролевой игры с открытым миром в Найт-Сити."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/header/new_banner1.webp" />
+    <meta name="theme-color" content="#f8f200" />
     <link rel="icon" href="img/header/Cyberpunk_2077_logo1.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,40 +46,24 @@
       media="(min-width: 769px)"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
-      rel="preload"
-      href="css/swiper-bundle.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    </noscript>
-    <link
-      rel="preload"
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      />
-    </noscript>
-    <title>Cyberpunk 2077</title>
+    <title>Cyberpunk 2077 // Night City Operations</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="top">
       <div class="header__container container">
-        <a href="#" class="header__logo" aria-label="Cyberpunk 2077 — На главную">
+        <a href="#top" class="header__logo" aria-label="Cyberpunk 2077 — На главную">
           <img
             src="img/header/Cyberpunk_2077_logo1.svg"
             alt="Cyberpunk 2077"
             width="296"
             height="74"
-            fetchpriority="high"
+            decoding="async"
           />
         </a>
         <nav class="header__social" aria-label="Социальные сети">
@@ -322,22 +314,25 @@
                   aria-label="Прикрепить скриншот"
                 />
                 <span class="form-label__info" id="fileUploadText">Прикрепить скриншот</span>
-                <span class="form-label__size">.png / .jpg / .pdf</span>
+                <span class="form-label__size">.png / .jpg / .pdf (до 10 МБ)</span>
               </label>
+              <div class="form__group form__group--checkbox">
+                <label class="form__footer checkbox" id="agreementCheckboxLabel" for="agreementCheckbox">
+                  <input
+                    class="checkbox__input"
+                    id="agreementCheckbox"
+                    type="checkbox"
+                    name="agreement"
+                    required
+                    aria-label="Согласие на обработку персональных данных"
+                  />
+                  <span class="checkbox__text"
+                    >Согласен на обработку персональных данных</span
+                  >
+                </label>
+                <span class="form__error" id="agreementError" aria-live="polite"></span>
+              </div>
               <button class="form__button btn" type="submit">Отправить</button>
-              <label class="form__footer checkbox" for="agreementCheckbox">
-                <input
-                  class="checkbox__input"
-                  id="agreementCheckbox"
-                  type="checkbox"
-                  name="agreement"
-                  required
-                  aria-label="Согласие на обработку персональных данных"
-                />
-                <span class="checkbox__text"
-                  >Согласен на обработку персональных данных</span
-                >
-              </label>
             </form>
             <picture class="draw__picture">
               <source
@@ -407,7 +402,7 @@
                   decoding="async"
                 />
               </span>
-              <a class="hp__logo" href="#" aria-label="Cyberpunk 2077">
+              <a class="hp__logo hp__logo--cp" href="#top" aria-label="Cyberpunk 2077">
                 <img
                   src="img/hp/yellow.svg"
                   alt="Cyberpunk 2077"
@@ -427,7 +422,7 @@
               отображения максимально насыщенных цветов. Успевай реагировать на
               любые события с временем отклика 1 мс и частотой в 144 Гц!
             </p>
-            <div class="display__hp">
+            <div class="display-features">
               <div class="display__item item-hp">
                 <div class="item-hp__icon">
                   <img
@@ -444,8 +439,6 @@
                   <p class="item-hp__info">Яркие насыщенные цвета</p>
                 </div>
               </div>
-            </div>
-            <div class="display__hp">
               <div class="display__item item-hp">
                 <div class="item-hp__icon">
                   <img
@@ -462,8 +455,6 @@
                   <p class="item-hp__info">Кристальная четкость изображения</p>
                 </div>
               </div>
-            </div>
-            <div class="display__hp">
               <div class="display__item item-hp">
                 <div class="item-hp__icon">
                   <img
@@ -574,8 +565,9 @@
               </div>
             </div>
             <p class="get__subtitle">Выберите платформу:</p>
-            <ul class="get-platform" role="radiogroup" aria-label="Игровые платформы">
-              <li class="get-platform__list is-active" data-platform="PC" role="radio" aria-checked="true" tabindex="0">
+            <div class="get-platform" role="group" aria-label="Выбор игровой платформы">
+              <label class="get-platform__list is-active">
+                <input type="radio" name="platform" value="PC" class="sr-only" checked />
                 <img
                   src="img/get/Frame_13.svg"
                   alt="PC"
@@ -584,8 +576,9 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </li>
-              <li class="get-platform__list" data-platform="Xbox One" role="radio" aria-checked="false" tabindex="0">
+              </label>
+              <label class="get-platform__list">
+                <input type="radio" name="platform" value="Xbox One" class="sr-only" />
                 <img
                   src="img/get/xbox-one-3_logo.svg"
                   alt="Xbox One"
@@ -594,8 +587,9 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </li>
-              <li class="get-platform__list" data-platform="Google Stadia" role="radio" aria-checked="false" tabindex="0">
+              </label>
+              <label class="get-platform__list">
+                <input type="radio" name="platform" value="Google Stadia" class="sr-only" />
                 <img
                   src="img/get/stadia_logo.svg"
                   alt="Stadia"
@@ -604,8 +598,9 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </li>
-              <li class="get-platform__list" data-platform="PlayStation 4" role="radio" aria-checked="false" tabindex="0">
+              </label>
+              <label class="get-platform__list">
+                <input type="radio" name="platform" value="PlayStation 4" class="sr-only" />
                 <img
                   src="img/get/Group.svg"
                   alt="PlayStation 4"
@@ -614,8 +609,8 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </li>
-            </ul>
+              </label>
+            </div>
             <p class="get-platform__selected">Выбрана платформа: <span class="color__word" id="selectedPlatformLabel">PC</span></p>
           </div>
         </div>
@@ -664,8 +659,7 @@
     </footer>
 
     <!-- Модальное окно характеристик монитора -->
-    <div class="cyber-modal" id="hpModal" role="dialog" aria-modal="true" aria-labelledby="hpModalTitle" hidden>
-      <div class="cyber-modal__overlay" data-modal-close></div>
+    <dialog class="cyber-modal" id="hpModal" aria-labelledby="hpModalTitle">
       <div class="cyber-modal__dialog cut-box">
         <div class="cyber-modal__header">
           <h3 class="cyber-modal__title" id="hpModalTitle">Характеристики HP Pavilion Gaming</h3>
@@ -686,11 +680,10 @@
           <button class="btn cyber-modal__btn" type="button" data-modal-close>Понятно</button>
         </div>
       </div>
-    </div>
+    </dialog>
 
     <!-- Модальное окно подтверждения розыгрыша -->
-    <div class="cyber-modal" id="raffleModal" role="dialog" aria-modal="true" aria-labelledby="raffleModalTitle" hidden>
-      <div class="cyber-modal__overlay" data-modal-close></div>
+    <dialog class="cyber-modal" id="raffleModal" aria-labelledby="raffleModalTitle">
       <div class="cyber-modal__dialog cut-box">
         <div class="cyber-modal__header">
           <h3 class="cyber-modal__title" id="raffleModalTitle">Заявка принята!</h3>
@@ -708,11 +701,10 @@
           <button class="btn cyber-modal__btn" type="button" data-modal-close>В игру</button>
         </div>
       </div>
-    </div>
+    </dialog>
 
     <!-- Модальное окно лицензии -->
-    <div class="cyber-modal" id="licenseModal" role="dialog" aria-modal="true" aria-labelledby="licenseModalTitle" hidden>
-      <div class="cyber-modal__overlay" data-modal-close></div>
+    <dialog class="cyber-modal" id="licenseModal" aria-labelledby="licenseModalTitle">
       <div class="cyber-modal__dialog cut-box">
         <div class="cyber-modal__header">
           <h3 class="cyber-modal__title" id="licenseModalTitle">Лицензионное соглашение</h3>
@@ -725,11 +717,10 @@
           <button class="btn cyber-modal__btn" type="button" data-modal-close>Закрыть</button>
         </div>
       </div>
-    </div>
+    </dialog>
 
     <!-- Модальное окно политики конфиденциальности -->
-    <div class="cyber-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" hidden>
-      <div class="cyber-modal__overlay" data-modal-close></div>
+    <dialog class="cyber-modal" id="privacyModal" aria-labelledby="privacyModalTitle">
       <div class="cyber-modal__dialog cut-box">
         <div class="cyber-modal__header">
           <h3 class="cyber-modal__title" id="privacyModalTitle">Политика конфиденциальности</h3>
@@ -742,9 +733,9 @@
           <button class="btn cyber-modal__btn" type="button" data-modal-close>Принять</button>
         </div>
       </div>
-    </div>
+    </dialog>
 
-    <script src="js/swiper-bundle.min.js" defer></script>
-    <script src="js/app.min.js" defer></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
