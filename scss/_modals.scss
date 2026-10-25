@@ -1,0 +1,141 @@
+/* Модальные окна */
+dialog.cyber-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  border: none;
+  background: transparent;
+  padding: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+  }
+
+  &[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cyber-modal__dialog {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 540px;
+    background-color: #0c0d10;
+    border: 2px solid var(--main-yellow);
+    box-shadow: 0 0 25px rgba(248, 242, 0, 0.3), inset 0 0 15px rgba(82, 190, 220, 0.15);
+    padding: 36px;
+    color: #fff;
+  }
+
+  .cyber-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(248, 242, 0, 0.3);
+    padding-bottom: 12px;
+  }
+
+  .cyber-modal__title {
+    font-family: var(--second-family);
+    font-size: 26px;
+    color: var(--main-yellow);
+    font-weight: 400;
+  }
+
+  .cyber-modal__close {
+    background: transparent;
+    border: none;
+    color: var(--main-yellow);
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: var(--main-cyan);
+      transform: scale(1.15);
+    }
+  }
+
+  .cyber-modal__body {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .cyber-modal__text {
+    margin-bottom: 15px;
+    color: #ccc;
+  }
+
+  .cyber-modal__subtext {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .cyber-modal__specs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+      padding-bottom: 6px;
+      font-size: 15px;
+
+      span {
+        color: #bbb;
+      }
+
+      strong {
+        color: var(--main-cyan);
+        font-weight: 500;
+        text-align: right;
+      }
+    }
+  }
+
+  .cyber-modal__badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+    padding: 16px;
+    background: rgba(248, 242, 0, 0.08);
+    border: 1px dashed var(--main-yellow);
+
+    span {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--main-cyan);
+    }
+
+    code {
+      font-family: monospace;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--main-yellow);
+      letter-spacing: 3px;
+    }
+  }
+
+  .cyber-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .cyber-modal__btn {
+    padding: 12px 36px;
+    font-size: 18px;
+  }
+}

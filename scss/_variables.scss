@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Archangelsk";
+  src: url("../fonts/Archangelsk.woff2") format("woff2"),
+       url("../fonts/Archangelsk.woff") format("woff"),
+       url("../fonts/Archangelsk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --second-family: "Archangelsk", sans-serif;
+  --main-yellow: #f8f200;
+  --main-cyan: #52bedc;
+  --bg-dark: #000000;
+}
+
+$color-yellow: #f8f200;
+$color-cyan: #52bedc;
+$color-dark: #000000;
+$color-white: #ffffff;
+$color-muted: #777777;
+$color-error: #ff0055;
