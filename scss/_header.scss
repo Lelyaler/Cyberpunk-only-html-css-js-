@@ -1,0 +1,43 @@
+/* Шапка сайта */
+.header {
+  position: absolute;
+  max-width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__logo {
+    display: inline-block;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__social_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 6px var(--main-cyan));
+    }
+
+    img {
+      max-width: 30px;
+      height: auto;
+    }
+  }
+}

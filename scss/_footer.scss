@@ -1,0 +1,66 @@
+/* Подвал */
+.footer {
+  background-color: #fff;
+  color: #000;
+
+  &__copy {
+    display: flex;
+    padding: 14px 20px;
+    background-color: #000;
+    justify-content: center;
+    color: #fff;
+  }
+}
+
+.footer-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1277px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 24px 36px;
+
+  &__logo {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.16;
+    gap: 32px;
+
+    .block__info {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.6);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.copyright {
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.16;
+}

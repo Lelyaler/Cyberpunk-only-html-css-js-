@@ -1,0 +1,18 @@
+{
+  "name": "cyberpunk-promo",
+  "version": "1.0.0",
+  "description": "Cyberpunk 2077 promo landing page based on Figma design layout",
+  "scripts": {
+    "build:css": "sass scss/style.scss css/style.css --no-source-map && sass scss/style.scss css/style.min.css --style=compressed --no-source-map",
+    "watch:css": "sass --watch scss/style.scss css/style.css"
+  },
+  "keywords": [
+    "cyberpunk",
+    "landing-page",
+    "html5",
+    "scss",
+    "vanilla-js"
+  ],
+  "author": "cherniavsckaya",
+  "license": "MIT"
+}
