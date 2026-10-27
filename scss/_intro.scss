@@ -5,50 +5,70 @@
 
 .intro {
   position: relative;
-  height: 800px;
+  min-height: 800px;
+  height: 100vh;
+  max-height: 960px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
 
   &__container {
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    padding-bottom: 40px;
+    z-index: 2;
   }
 }
 
 .intro-block {
   &__img {
     position: absolute;
-    left: 0;
-    right: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    z-index: 1;
+
+    &.swiper-container,
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 .swiper-slide {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
+  position: relative;
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
   }
 }
 
 .intro-content {
   position: relative;
   z-index: 2;
-  padding: 70px;
+  padding: 56px 50px;
   max-width: 624px;
   width: 100%;
   background-color: var(--main-yellow);
@@ -57,21 +77,22 @@
     font-family: var(--second-family);
     margin-bottom: 24px;
     color: #000;
-    font-size: 62px;
-    line-height: 1.01;
+    font-size: 58px;
+    line-height: 1.05;
     font-weight: 400;
   }
 
   &__button {
-    padding: 19px 50px;
-    font-size: 24px;
+    padding: 18px 48px;
+    font-size: 22px;
     color: var(--main-yellow);
     background: #000;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 
     &:hover {
       color: #fff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
     }
   }
 }
