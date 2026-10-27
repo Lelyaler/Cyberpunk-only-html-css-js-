@@ -1,5 +1,5 @@
 /**
- * Swiper 3D Cube slider initialization for hero banner.
+ * Hero banner Swiper slider with smooth responsive transitions.
  */
 
 export function initHeroSlider() {
@@ -8,16 +8,17 @@ export function initHeroSlider() {
   const container = document.querySelector('.swiper-container');
   if (!container) return;
 
-  new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper-container', {
     loop: true,
-    effect: 'cube',
-    cubeEffect: {
-      slideShadows: true,
-      shadow: true,
-      shadowOffset: 20,
-      shadowScale: 0.94
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
     },
-    speed: 800,
+    speed: 750,
+    observer: true,
+    observeParents: true,
+    resizeObserver: true,
+    watchOverflow: true,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
@@ -28,5 +29,11 @@ export function initHeroSlider() {
       onlyInViewport: true
     },
     grabCursor: true
+  });
+
+  window.addEventListener('resize', () => {
+    if (swiper && !swiper.destroyed) {
+      swiper.update();
+    }
   });
 }

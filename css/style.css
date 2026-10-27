@@ -167,46 +167,63 @@ img {
 
 .intro {
   position: relative;
-  height: 800px;
+  min-height: 800px;
+  height: 100vh;
+  max-height: 960px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
 }
 .intro__container {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  padding-bottom: 40px;
+  z-index: 2;
 }
 
 .intro-block__img {
   position: absolute;
-  left: 0;
-  right: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  z-index: 1;
+}
+.intro-block__img.swiper-container,
+.intro-block__img .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.intro-block__img .swiper-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
+  position: relative;
+}
+.swiper-slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
 .intro-content {
   position: relative;
   z-index: 2;
-  padding: 70px;
+  padding: 56px 50px;
   max-width: 624px;
   width: 100%;
   background-color: var(--main-yellow);
@@ -215,20 +232,21 @@ img {
   font-family: var(--second-family);
   margin-bottom: 24px;
   color: #000;
-  font-size: 62px;
-  line-height: 1.01;
+  font-size: 58px;
+  line-height: 1.05;
   font-weight: 400;
 }
 .intro-content__button {
-  padding: 19px 50px;
-  font-size: 24px;
+  padding: 18px 48px;
+  font-size: 22px;
   color: var(--main-yellow);
   background: #000;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 .intro-content__button:hover {
   color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
 /* Секция "О Найт-Сити" */
@@ -926,6 +944,24 @@ dialog.cyber-modal .cyber-modal__btn {
 
 /* Адаптивность */
 @media (max-width: 1024px) {
+  .intro {
+    min-height: 700px;
+    height: 90vh;
+    max-height: 850px;
+  }
+  .intro-content {
+    max-width: 520px;
+    padding: 44px 36px;
+  }
+  .intro-content__title {
+    font-size: 48px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+  .intro-content__button {
+    padding: 16px 40px;
+    font-size: 20px;
+  }
   .about-item__box {
     width: 100%;
     display: flex;
@@ -988,16 +1024,57 @@ dialog.cyber-modal .cyber-modal__btn {
   }
 }
 @media (max-width: 768px) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
   .header__container {
     flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    gap: 12px;
   }
   .header__logo {
-    margin-bottom: 10px;
+    margin-bottom: 0;
+  }
+  .header__logo img {
+    max-width: 190px;
+    height: auto;
+  }
+  .header__social {
+    gap: 24px;
   }
   .intro {
-    height: 620px;
+    min-height: 580px;
+    height: calc(100vh - 40px);
+    max-height: 700px;
   }
-  .intro-content__title,
+  .intro__container {
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 24px;
+  }
+  .intro-content {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+  .intro-content__title {
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .intro-content__button {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 36px;
+    font-size: 18px;
+    text-align: center;
+  }
   .about__title,
   .display-hp__title,
   .draw__title,
@@ -1080,11 +1157,40 @@ dialog.cyber-modal .cyber-modal__btn {
   .container {
     padding: 0 15px;
   }
+  .header__logo img {
+    max-width: 160px;
+  }
+  .header__social {
+    gap: 18px;
+  }
+  .header__social_icon img {
+    max-width: 22px;
+  }
   .intro {
-    height: 560px;
+    min-height: 500px;
+    height: auto;
+    max-height: none;
+    padding-top: 100px;
+    padding-bottom: 24px;
+  }
+  .intro__container {
+    padding: 0 12px;
+  }
+  .intro-content {
+    padding: 24px 18px;
+    max-width: 100%;
   }
   .intro-content__title {
-    font-size: 38px;
+    font-size: 28px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .intro-content__button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: center;
   }
   .about__title {
     font-size: 38px;
@@ -1157,18 +1263,24 @@ dialog.cyber-modal .cyber-modal__btn {
 }
 @media (max-width: 387px) {
   .header__social {
-    gap: 24px;
+    gap: 14px;
+  }
+  .intro {
+    min-height: 460px;
+    padding-top: 90px;
+    padding-bottom: 20px;
   }
   .intro-content {
-    padding: 24px 16px;
+    padding: 20px 14px;
   }
   .intro-content__title {
-    font-size: 28px;
-    text-align: center;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
   }
   .intro-content__button {
-    padding: 10px 40px;
-    font-size: 18px;
+    padding: 12px 18px;
+    font-size: 15px;
   }
   .about {
     padding: 70px 0 50px;
